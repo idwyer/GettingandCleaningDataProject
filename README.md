@@ -19,6 +19,8 @@ Each subject was placed in one of two groups, test group and a train group.
 * train/subject_train.txt: Contains the subject for each observation in the train data set.
 * test/subject_test.txt: Contains the subject for each observation in the test data set.
 
+These are availble in the folder Data. The file projectData.zip contains all files in a compressed file. The folder UCI HAR Dataset contains the unzipped files.
+
 ### Assignment Objective
 For this assignment we must download the raw data and produce a tidy data set that calculates the average for only the Standard deviation and mean variables, by subject and activity.
 
