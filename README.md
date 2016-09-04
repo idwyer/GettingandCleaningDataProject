@@ -19,7 +19,7 @@ Each subject was placed in one of two groups, test group and a train group.
 * train/subject_train.txt: Contains the subject for each observation in the train data set.
 * test/subject_test.txt: Contains the subject for each observation in the test data set.
 
-These are availble in the folder Data. The file projectData.zip contains all files in a compressed file. The folder UCI HAR Dataset contains the unzipped files.
+These are available in the folder Data. The file projectData.zip contains all files in a compressed file. The folder UCI HAR Dataset contains the unzipped files.
 
 ### Assignment Objective
 For this assignment we must download the raw data and produce a tidy data set that calculates the average for only the Standard deviation and mean variables, by subject and activity.
@@ -29,7 +29,9 @@ For this assignment we must download the raw data and produce a tidy data set th
 ### Overview
 
 Project Script Name: run_analysis.R
+
 Project Script output: avgbysubjectactivity.csv
+
 Command to load the output file: read.csv("./Project/Data/avgbysubjectactivity.csv")
 
 The run_analysis.R script will produce the requested tidy dataset. It willdownload the raw data files and unzip the files, placing them in the folder "./Project/Data" under your working directory. The script will them transform the data by merging the feature, subject, activity with the variable data. A tidy data set will be created that includes descriptive names and can be used to perform the analysis for the project. The result of the analysis is then written to the output file listed above.
