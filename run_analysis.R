@@ -89,5 +89,6 @@ cnam <- colnames(allDatadcast)
 colnames(allDatadcast) <- ifelse(cnam %in% c("subjectid", "activity"), cnam, paste0("average", cnam)) 
 
 #write the resulting tidy data frame out to a file.
-write.csv(allDatadcast, "./Project/Data/avgbysubjectactivity.csv", row.names = FALSE)
+#write.csv(allDatadcast, "./Project/Data/avgbysubjectactivity.csv", row.names = FALSE)
+write.table(allDatadcast, "./Project/Data/avgbysubjectactivity.txt", row.name = FALSE)
 

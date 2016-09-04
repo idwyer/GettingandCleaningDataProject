@@ -30,9 +30,9 @@ For this assignment we must download the raw data and produce a tidy data set th
 
 Project Script Name: run_analysis.R
 
-Project Script output: avgbysubjectactivity.csv
+Project Script output: avgbysubjectactivity.txt
 
-Command to load the output file: read.csv("./Project/Data/avgbysubjectactivity.csv")
+Command to load the output file: read.table("./Project/Data/avgbysubjectactivity.txt", header=TRUE)
 
 The run_analysis.R script will produce the requested tidy dataset. It will download the raw data files and unzip the files, placing them in the folder "./Project/Data" under your working directory. The script will then transform the data by merging the feature, subject, activity with the variable data. A tidy data set will be created that includes descriptive names and can be used to perform the analysis for the project. The result of the analysis is then written to the output file listed above.
 
