@@ -19,11 +19,11 @@ The data for this study was collected from the link below. It was downloaded and
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 
 ## Summary choices
-All data was summarized by subject and activity
+All data was summarized by subject and activity.
 
 ## Variables
 * subjectid - This is the subject number (1-30) for the study.
-* activity - The activity description. This can be one of 1 WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING. 
+* activity - The activity description. This can be one of WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING. 
 * averagetbodyaccmeanx            - This is the average of the measurement tbodyaccmeanx from the orginal dataset by subject and activity.           
 * averagetbodyaccmeany            - This is the average of the measurement tbodyaccmeany from the orginal dataset by subject and activity.           
 * averagetbodyaccmeanz            - This is the average of the measurement tbodyaccmeanz from the orginal dataset by subject and activity.            

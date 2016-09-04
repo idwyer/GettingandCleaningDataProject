@@ -34,13 +34,15 @@ Project Script output: avgbysubjectactivity.csv
 
 Command to load the output file: read.csv("./Project/Data/avgbysubjectactivity.csv")
 
-The run_analysis.R script will produce the requested tidy dataset. It willdownload the raw data files and unzip the files, placing them in the folder "./Project/Data" under your working directory. The script will them transform the data by merging the feature, subject, activity with the variable data. A tidy data set will be created that includes descriptive names and can be used to perform the analysis for the project. The result of the analysis is then written to the output file listed above.
+The run_analysis.R script will produce the requested tidy dataset. It will download the raw data files and unzip the files, placing them in the folder "./Project/Data" under your working directory. The script will then transform the data by merging the feature, subject, activity with the variable data. A tidy data set will be created that includes descriptive names and can be used to perform the analysis for the project. The result of the analysis is then written to the output file listed above.
 
 ### Script Details
 
-* Download the required raw data files which are compressed so the files must be unzipped.
+* An id column is generated for each of the measruement data, subject data and lable data. The id is generated using the row number of the dataset. It is assumed that each of the datasets that we generate an id for are sorted in an identical way. These id columns are used to join the datasets together.
 
-* The features.txt file contains the list of variables collected in the study and it can be used to assign column names to the dataset collected in the study. When this data is loaded I use the parameter "stringsAsFactors = FALSE" because it makes assigning the column names later on easier.
+*Download the required raw data files. These files are compressed into a zip file so the zip file must be unzipped.
+
+* The features.txt file contains the list of measurements collected in the study and it can be used to assign column names to the dataset collected in the study. When this data is loaded, I use the parameter "stringsAsFactors = FALSE" because it makes assigning the column names easier later on.
 
 * Next I load the activity data into a data frame and assign column names to the data frame.
 
@@ -50,24 +52,24 @@ The run_analysis.R script will produce the requested tidy dataset. It willdownlo
 
 * I load the test and train subject data into a data frame and  combine the two data sets into a single data frame. A descriptive columnm name is assigned and,  an id is generated for each record and stored in the data frame. The id will be used to join to the observation data.
 
-* The list of activities is built by joinin the label data and the activity data. 
+* The list of activities is built by joining the label data and the activity data. 
 
-* Using the features data column names are assigned to the combined train and test data sets. I add the column name for the id column I generated to the feature data before using it to assign the column names to the data set.
+* Using the features data, column names are assigned to the combined train and test data sets. I add the column name for the id column I generated to the feature data before using it to assign the column names to the data set.
 
 * Since only the measurements for Standard deviation STD and mean are required for the analysis, I remove al other obervation variables.
 
-* column names are converted to lower case and special characters are removed. 
+* Column names are converted to lower case and special characters are removed. 
 
-* The observation data, activity data and subject data is joined together to produce one data set that can be used for our analysis. When join the data the observation data is always the "y" data frame in the join so that all the measurements come after the subject and activity information.
+* The observation data, activity data and subject data is joined together to produce one data set that can be used for our analysis. When I join the data the observation data is always the "y" data frame in the merge command so that all the measurements come after the subject and activity information.
 
-* The dataset is then melted by subject and activity. The melted data set is then cast to calculate the average of each measurement by subject and activity. The melt/dcast functions are int he R package reshape2 so that package must be loaded. The melt/dcast approach was used because it conveniently removes the id column I generated from the dataset. this column is not required in the final datset. 
+* The dataset is then melted by subject and activity. The melted data set is then cast to calculate the average of each measurement by subject and activity. The melt/dcast functions are in the R package reshape2 so that package must be loaded. The melt/dcast approach was used because it conveniently removes the id column I generated from the dataset. This column is not required in the final datset. 
 
-* I add "avg" as a prefix to each measurement column to identify that the column represents an average and write the resulting tidy data frame out to the file listed above.
+* I add "average" as a prefix to each measurement column to identify that the column represents an average and write the resulting tidy data frame out to the file listed above.
 
 ### R Version Information
 The script was run in R-Studio (version 0.99.896) with R version 3.25,  on a computer running Windows 10. 
 
 ## Final File Output
-The finial output that is written to the output file containis the requested tidy data frame. The output contains an average of each measurement by subject and activity. Only the STD and mean measurements from the original data sets are included.
+The final output that is written to the output file contains the requested tidy data. The output contains an average of each measurement by subject and activity. Only the STD and mean measurements from the original data sets are included.
 
 The final dataset is tidy because all of the columns have descriptive names. Each row contains one observation and each column contains one measure. For this project I used a wide data set as the final output because, based on the objective ( produce the average of each measurement by subject and activity), one observation consists of a subject and an activity. There is also no requirement in the objective to aggregate across multiple measurements.
